@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Decentralized Digital Identity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="image">
+        <div class="heading">
+        Decentralized Digital Identity
+        </div>
+        <section>
+            <!-- User Login -->
+            <div class="form-box">
+                <div class="form-value">
+                    <div style="display: flex; justify-content: center;">
+                        <ion-icon name="person-circle-outline" style="font-size: 60px; color: #fff;"></ion-icon>
+                    </div>
+                    <h2>User Login</h2>
+                    <div class="inputbox">
+                        <button id="user_lgn_btn">Connect Wallet</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Company Login -->
+            <div class="form-box">
+                <div class="form-value">
+                    <div style="display: flex; justify-content: center;">
+                        <ion-icon name="briefcase-outline" style="font-size: 60px; color: #fff;"></ion-icon>
+                    </div>
+                    <h2>Company Login</h2>
+                    <div class="inputbox">
+                        <button id="company_lgn_btn">Connect Wallet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        var usr_lgn_btn = document.getElementById("user_lgn_btn");
+        var cmp_lgn_btn = document.getElementById("company_lgn_btn");
+
+        usr_lgn_btn.addEventListener("click", () => location = "/connectWallet/user");
+        cmp_lgn_btn.addEventListener("click", () => location = "/connectWallet/company");
+    </script>
+</body>
+</html>

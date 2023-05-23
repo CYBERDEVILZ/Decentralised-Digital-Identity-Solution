@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Permission Request</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+    
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+    
+    #container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60vh;
+    }
+    
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    
+    button {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  </style>
+  <script src="./DDIS_module.js"></script>
+</head>
+<body>
+  <h1>Need Permission</h1>
+  <div id="container">
+    <div>
+      <p>This page will be requiring your name, and phone number. Please give us your access by clicking on the button below.</p>
+      <button onclick="grantPermission()">Grant Permission</button>
+    </div>
+  </div>
+</body>
+<script>
+  async function grantPermission() {
+    const ddis = new DDISinit("0xc7F4e9527F139e0F1062dB13c8C93F1c4f4Fe787");
+    await ddis.giveConsent();
+  }
+</script>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            View Consent - {{ companyAddress }}
+        </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/viewConsent.css') }}">
+        <script src="{{ url_for('static', filename='js/walletOperations.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/web3.js') }}"></script>
+    </head>
+    <body>
+        <!-- Place holder to show while data is being fetched -->
+        <div id="fetchingData" class="fetchingData">
+            Fetching Data...
+        </div>
+        <!-- consentsBox -->
+        <div class="formbox" id="detailsBox">
+            <h2>Company's Consent</h2>
+            <!-- user details -->
+            <div class="details" id="details">
+                <div class="name" id="name">name: </div>
+                <div class="dob" id="dob">dob: </div>
+                <div class="email" id="email">email: </div>
+                <div class="phone" id="phone">phone: </div>
+                <div class="image" id="image">image link: </div>
+                <div class="video" id="video">video link: </div>
+                <div class="inputbox">
+                    <button id="revoke_consent">Revoke Consent</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="{{ url_for('static', filename='js/viewConsentOperations.js') }}"></script>
+    <script>
+        async function init(){
+            // connect wallet;
+            await connectWallet();
+            console.log("account: " + account);
+            // call endpoint to get data from smart contracts
+           await fetchCompanyConsent( "{{ companyAddress }}" );
+
+           // register event listener for revoke consent
+           var revokeConsentButton = document.getElementById("revoke_consent");
+           revokeConsentButton.addEventListener("click", async () => {await revokeConsent("{{ companyAddress }}");});
+        }
+       init();
+    </script>
+</html>

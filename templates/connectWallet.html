@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Connect Wallet - {{ userType }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/connectWallet.css') }}">
+        <script src="{{ url_for('static', filename='js/walletOperations.js') }}"></script>
+    </head>
+    <body>
+        Connecting your wallet...
+    </body>
+    <script>
+        navigateUser('{{userType}}')
+    </script>
+</html>
