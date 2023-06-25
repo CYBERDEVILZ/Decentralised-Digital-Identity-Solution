@@ -50,14 +50,14 @@
   <h1>Need Permission</h1>
   <div id="container">
     <div>
-      <p>This page will be requiring your name, and phone number. Please give us your access by clicking on the button below.</p>
+      <p>This page will be requiring your name, DOB, and email. Please give us your access by clicking on the button below.</p>
       <button onclick="grantPermission()">Grant Permission</button>
     </div>
   </div>
 </body>
 <script>
   async function grantPermission() {
-    const ddis = new DDISinit("0xc7F4e9527F139e0F1062dB13c8C93F1c4f4Fe787");
+    const ddis = new DDISinit("COMPANY WALLET ADDRESS HERE");
     await ddis.giveConsent();
   }
 </script>
