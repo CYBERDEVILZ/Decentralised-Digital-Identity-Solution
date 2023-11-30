@@ -128,4 +128,4 @@ def getCompanyInfo(companyAddress):
     companyInfoMapping["consent"] = companyConsent
     return json.dumps(companyInfoMapping)    
 
-app.run(debug=True)
+app.run(debug=True, host='0.0.0.0', port=80)
