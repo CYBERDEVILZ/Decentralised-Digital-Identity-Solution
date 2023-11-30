@@ -127,5 +127,3 @@ def getCompanyInfo(companyAddress):
     companyInfoMapping["companyName"] = companyName
     companyInfoMapping["consent"] = companyConsent
     return json.dumps(companyInfoMapping)    
-
-app.run()
